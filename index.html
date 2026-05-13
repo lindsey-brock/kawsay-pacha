@@ -8,49 +8,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{height:100%;background:#1a1810;color:#f5f0e8;font-family:'DM Sans',sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 24px;}
+html,body{height:100%;background:#1a1810;color:#f5f0e8;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:32px 48px;}
 
-.wrap{display:flex;flex-direction:column;align-items:center;gap:32px;max-width:560px;text-align:center;}
+.wrap{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;width:100%;}
 
-.logo{height:80px;width:auto;opacity:0;animation:fadeUp 1s ease 0.2s forwards;}
+.left{display:flex;flex-direction:column;align-items:center;gap:10px;border-right:1px solid rgba(232,220,200,0.1);padding-right:56px;}
+.logo{height:160px;width:auto;opacity:0;animation:fadeUp 1s ease 0.2s forwards;}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:300;letter-spacing:0.18em;color:#9a9280;text-align:center;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards;text-transform:uppercase;}
 
-.title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:300;letter-spacing:0.06em;color:#e8dcc8;line-height:1.1;opacity:0;animation:fadeUp 0.8s ease 0.6s forwards;}
+.right{display:flex;flex-direction:column;gap:16px;}
+.subtitle{font-size:8px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#c4a96b;opacity:0;animation:fadeUp 0.8s ease 0.5s forwards;}
+.title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,30px);font-weight:300;letter-spacing:0.04em;color:#e8dcc8;line-height:1.15;opacity:0;animation:fadeUp 0.8s ease 0.7s forwards;}
 .title em{font-style:italic;color:#c4a96b;}
-
-.subtitle{font-size:9px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:#c4a96b;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards;}
-
-.desc{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#9a9280;line-height:1.8;opacity:0;animation:fadeUp 0.8s ease 1s forwards;}
-
-.map-wrap{opacity:0;animation:fadeUp 0.8s ease 0.8s forwards;}
-
-.divider{width:1px;height:40px;background:rgba(232,220,200,0.15);opacity:0;animation:fadeIn 1s ease 1.2s forwards;}
-
-.footer{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#9a9280;opacity:0;animation:fadeUp 0.8s ease 1.4s forwards;}
+.map-wrap{opacity:0;animation:fadeUp 0.8s ease 0.9s forwards;}
+.divider{width:32px;height:1px;background:rgba(232,220,200,0.15);opacity:0;animation:fadeIn 1s ease 1.2s forwards;}
+.footer{font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#9a9280;opacity:0;animation:fadeUp 0.8s ease 1.4s forwards;}
 .footer a{color:#c4a96b;text-decoration:none;}
 
-/* TOPO RINGS */
 .topo-ring{fill:none;stroke:#3a3520;stroke-width:1;stroke-dasharray:800;stroke-dashoffset:800;}
 .topo-ring:nth-child(1){animation:drawRing 2s ease 1.0s forwards;}
 .topo-ring:nth-child(2){animation:drawRing 2s ease 1.3s forwards;}
 .topo-ring:nth-child(3){animation:drawRing 2s ease 1.6s forwards;}
 .topo-ring:nth-child(4){animation:drawRing 2s ease 1.9s forwards;}
-
 .river{fill:none;stroke:#c4a96b;stroke-width:1.5;stroke-dasharray:4 3;opacity:0;animation:fadeIn 1.2s ease 2.2s forwards;}
-
 .dot{opacity:0;}
 .dot:nth-child(1){animation:fadeIn 0.5s ease 2.6s forwards;}
 .dot:nth-child(2){animation:fadeIn 0.5s ease 2.9s forwards;}
 .dot:nth-child(3){animation:fadeIn 0.5s ease 3.2s forwards;}
 .dot:nth-child(4){animation:fadeIn 0.5s ease 3.5s forwards;}
-
-/* PULSING dot on last site */
-@keyframes pulse{
-  0%,100%{r:6px;opacity:1;}
-  50%{r:9px;opacity:0.5;}
-}
-.dot-pulse{animation:fadeIn 0.5s ease 3.5s forwards, pulse 2s ease 4s infinite;}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{r:4px;opacity:1;}50%{r:7px;opacity:0.4;}}
+.dot-pulse{animation:fadeIn 0.5s ease 3.5s forwards,pulse 2s ease 4s infinite;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes drawRing{to{stroke-dashoffset:0;}}
 </style>
@@ -58,34 +46,36 @@ html,body{height:100%;background:#1a1810;color:#f5f0e8;font-family:'DM Sans',san
 <body>
 <div class="wrap">
 
-  <div class="subtitle">Arqueología · Paisaje · Patrimonio</div>
-
-  <img class="logo"
-    src="https://res.cloudinary.com/dmegrbq5k/image/upload/v1778671442/Untitled_design_-_2026-05-13T132011.376_lxvkid.png"
-    alt="Kawsay Pacha"/>
-
-  <h1 class="title">Paisajes Dinámicos<br>y Sitios <em>Monumentales</em></h1>
-
-  <div class="map-wrap">
-    <svg width="300" height="200" viewBox="0 0 300 200">
-      <rect width="300" height="200" fill="transparent"/>
-
-      <ellipse class="topo-ring" cx="150" cy="100" rx="130" ry="80"/>
-      <ellipse class="topo-ring" cx="150" cy="100" rx="100" ry="60"/>
-      <ellipse class="topo-ring" cx="150" cy="100" rx="70" ry="40"/>
-      <ellipse class="topo-ring" cx="150" cy="100" rx="40" ry="22"/>
-
-      <path class="river" d="M30 60 Q90 85 150 95 Q210 105 270 130"/>
-
-      <circle class="dot" cx="88" cy="80" r="4" fill="#c4a96b"/>
-      <circle class="dot" cx="120" cy="90" r="4" fill="#c4a96b"/>
-      <circle class="dot" cx="155" cy="98" r="4" fill="#c4a96b"/>
-      <circle class="dot dot-pulse" cx="190" cy="108" r="4" fill="#c4a96b"/>
-    </svg>
+  <div class="left">
+    <img class="logo"
+      src="https://res.cloudinary.com/dmegrbq5k/image/upload/v1778671442/Untitled_design_-_2026-05-13T132011.376_lxvkid.png"
+      alt="Kawsay Pacha"/>
+    <div class="logo-name">Kawsay Pacha</div>
   </div>
 
-
-  <div class="divider"></div>
+  <div class="right">
+    <div class="subtitle">Arqueología · Paisaje · Patrimonio</div>
+    <h1 class="title">Paisajes Dinámicos<br>y Sitios <em>Monumentales</em></h1>
+    <div class="map-wrap">
+      <svg width="260" height="160" viewBox="0 0 260 160">
+        <rect width="260" height="160" fill="transparent"/>
+        <ellipse class="topo-ring" cx="130" cy="80" rx="115" ry="65"/>
+        <ellipse class="topo-ring" cx="130" cy="80" rx="88" ry="48"/>
+        <ellipse class="topo-ring" cx="130" cy="80" rx="60" ry="32"/>
+        <ellipse class="topo-ring" cx="130" cy="80" rx="32" ry="17"/>
+        <path class="river" d="M20 50 Q75 70 130 78 Q185 86 240 108"/>
+        <circle class="dot" cx="72" cy="65" r="4" fill="#c4a96b"/>
+        <circle class="dot" cx="103" cy="74" r="4" fill="#c4a96b"/>
+        <circle class="dot" cx="135" cy="80" r="4" fill="#c4a96b"/>
+        <circle class="dot dot-pulse" cx="168" cy="88" r="4" fill="#c4a96b"/>
+      </svg>
+    </div>
+    <div class="divider"></div>
+    <div class="footer">
+      Callejón de Huaylas, Áncash · Perú &nbsp;·&nbsp;
+      <a href="https://www.facebook.com/Kawsaypacha.proyecto" target="_blank">Facebook</a>
+    </div>
+  </div>
 
 </div>
 </body>
